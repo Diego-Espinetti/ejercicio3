@@ -20,6 +20,8 @@ var televisor2 = [
     {nombre: "televisor samsung3", Precio:2},
 ]
 
+var arraynuevo;
+
 
 televisores[0] = "Televisor-Samsung";
 televisores["Televisor-Samsung"] = {"Codigo": 1,
@@ -129,7 +131,7 @@ function VerTelevisores(){
  */
     }
    /*  console.log(precios) */
-    document.write(` <button onclick="Ordenanos()" >Ordenanos</button>`)
+    document.write(` <button onclick="Ordenanos(televisores)" >Ordenanos</button>`)
 }
 
 function Ordenanos(arrays){
@@ -143,15 +145,37 @@ function Ordenanos(arrays){
             } 
         }
     }
-    return arrays   
+    console.log( arrays)   
 
 
+    for(i = 0; i<9;i++){
     
-    
+        nombreTv = televisores[i];
+       console.log(nombreTv)
+       document.write(`<div>`);
+        document.write(` <h2>${televisores[i]}</h2>`);
+        document.write(` <p>${televisores[nombreTv].Codigo}</p>`);
+        document.write(`<p>${televisores[nombreTv].Stock}</p>`);
+        document.write(`<img src="${televisores[nombreTv].Img}"></img>`);
+        document.write(`<p>${televisores[nombreTv].Precio}</p>`);
+        document.write(`<p>${televisores[nombreTv].Descripcion}</p>`);
+        document.write(`</div>`);
+    }
+
+    document.write(` <button onclick="Ordenanos(televisores)" >Ordenanos</button>`)
 };
 
-const arraynuevo = Ordenanos(televisores);
+
+
+
+
+    
+    
+
+
+arraynuevo = Ordenanos(televisores);
 console.log(arraynuevo)
+
 
 
 
