@@ -12,7 +12,7 @@ e. Descripción del producto.
 f. Botón de añadir al carrito.
 Se pide también un botón que diga ordenar y que muestre los
 televisores del menor precio al mayor precio. */
-
+var newArray = []
 var televisores = []
 var televisor2 = [
     {nombre: "televisor samsung", Precio:10},
@@ -128,31 +128,29 @@ function VerTelevisores(){
         console.log(nombreTv)
  */
     }
-    console.log(precios)
+   /*  console.log(precios) */
     document.write(` <button onclick="Ordenanos()" >Ordenanos</button>`)
 }
 
-function Ordenanos(array){
+function Ordenanos(arrays){
 
-    for(let i = 0; i<array.length; i++){
-        for(let j = 0; j<array.length-i;j++){
-             console.log(array[j].Precio) 
-             if((array[j].Precio)>array[j+1].Precio){
-                const va = array[j];
-                array[j] = array[j + 1];
-                array[j+1] = va;
+    for(let i = 0; i<9; i++){
+        for(let j = 0; j<9-i;j++){
+             if(arrays[j].Precio > arrays[j].Precio){
+                const va = arrays[j];
+                arrays[j] = arrays[j + 1];
+                arrays[j+1] = va;
             } 
         }
     }
-    return array
+    return arrays   
 
-console.log("Hola desde Ordenans")
 
     
- 
+    
 };
 
-const arraynuevo = Ordenanos(televisor2);
+const arraynuevo = Ordenanos(televisores);
 console.log(arraynuevo)
 
 
