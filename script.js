@@ -20,14 +20,14 @@ televisores[0] = "Televisor-Samsung";
 televisores["Televisor-Samsung"] = {"Codigo": 1,
                                     "Stock":18,
                                     "Img":"img//",
-                                    "Precio":1400,
+                                    "Precio":12400,
                                     "Descripcion": "tv 50 pulgadas",
                                     };
 
 televisores[1] = "Televisor-TopHouse";
 televisores["Televisor-TopHouse"] = {"Codigo": 2,
                                     "Stock":18,
-                                    "Img":"img//",
+                                    "Img":"img1/descarga(1).jpg",
                                     "Precio":1000,
                                     "Descripcion": "tv 50 pulgadas",
 };
@@ -63,7 +63,7 @@ televisores[6] = "Televisor-Motorola";
 televisores["Televisor-Motorola"] = {"Codigo": 7,
                                     "Stock":128,
                                     "Img":"img//",
-                                    "Precio":75000,
+                                    "Precio":7000,
                                     "Descripcion": "tv 50 pulgadas",
 };
 televisores[7] = "Televisor-LG";
@@ -86,7 +86,7 @@ console.log(televisores[1])
 console.log(televisores["Televisor-TopHouse"].Precio)
 console.log(televisores["Televisor-Sony"].Precio)
 
-var i, nombreTv, contenedor;
+var i, nombreTv, contenedor,x, precios= [];
 
 contenedor = document.getElementById("contenedor");
 
@@ -113,19 +113,32 @@ function VerTelevisores(){
         document.write(` <h2>${televisores[i]}</h2>`);
         document.write(` <p>${televisores[nombreTv].Codigo}</p>`);
         document.write(`<p>${televisores[nombreTv].Stock}</p>`);
+        document.write(`<img src="${televisores[nombreTv].Img}"></img>`);
         document.write(`<p>${televisores[nombreTv].Precio}</p>`);
         document.write(`<p>${televisores[nombreTv].Descripcion}</p>`);
         document.write(`</div>`);
 
-}
-document.write(` <button onclick="Ordenanos()" >Ordenanos</button>`)
+     /*    x = televisores[nombreTv].Precio
+        precios.push(x)
+        console.log(nombreTv)
+ */
+    }
+    console.log(precios)
+    document.write(` <button onclick="Ordenanos()" >Ordenanos</button>`)
 }
 
 var arraynuevo = [];
 function Ordenanos(){
 
 
+    if(televisores["Televisor-Samsung"].Precio> televisores["Televisor-TopHouse"].Precio  || televisores[nombreTv].Precio> televisores["Televisor-Sony"].Precio /* && televisores[nombreTv].Precio> televisores["Televisor-TLC"].Precio && televisores[nombreTv].Precio> televisores["Televisor-Asus"].Precio && televisores[nombreTv].Precio> televisores["Televisor-Hitachi"].Precio && televisores[nombreTv].Precio> televisores["Televisor-Motorola"].Precio   && televisores[nombreTv].Precio> televisores["Televisor-LG"].Precio && televisores[nombreTv].Precio> televisores["Televisor-Noblex"].Precio */){
+        precios.push(televisores["Televisor-Samsung"])
+    }
+    
+    console.log(precios)
 
 };
+
+
 
 
