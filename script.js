@@ -12,7 +12,20 @@ e. Descripción del producto.
 f. Botón de añadir al carrito.
 Se pide también un botón que diga ordenar y que muestre los
 televisores del menor precio al mayor precio. */
-    
+
+var televisores = []
+
+
+televisores[0] = "Televisor-Samsung";
+televisores["Televisor-Samsung"] = {"Codigo": 1,
+                                    "Stock":18,
+                                    "Img":"img//",
+                                    "Descripcion": "tv 50 pulgadas",
+                                    };
+
+console.log(televisores)
+console.log(televisores[0])
+
 
 
 
