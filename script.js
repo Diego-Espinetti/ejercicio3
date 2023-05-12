@@ -14,6 +14,11 @@ Se pide también un botón que diga ordenar y que muestre los
 televisores del menor precio al mayor precio. */
 
 var televisores = []
+var televisor2 = [
+    {nombre: "televisor samsung", Precio:10},
+    {nombre: "televisor samsung2", Precio:5},
+    {nombre: "televisor samsung3", Precio:2},
+]
 
 
 televisores[0] = "Televisor-Samsung";
@@ -127,29 +132,31 @@ function VerTelevisores(){
     document.write(` <button onclick="Ordenanos()" >Ordenanos</button>`)
 }
 
-var arraynuevo = [];
-function Ordenanos(){
+function Ordenanos(array){
+
+    for(let i = 0; i<array.length; i++){
+        for(let j = 0; j<array.length-i;j++){
+             console.log(array[j].Precio) 
+             if((array[j].Precio)>array[j+1].Precio){
+                const va = array[j];
+                array[j] = array[j + 1];
+                array[j+1] = va;
+            } 
+        }
+    }
+    return array
 
 console.log("Hola desde Ordenans")
 
-    for(i = 0; i<9;i++){
-
-    if(televisores["Televisor-Samsung"].Precio> televisores["Televisor-TopHouse"].Precio  || televisores["Televisor-Samsung"].Precio> televisores["Televisor-Sony"].Precio  || televisores["Televisor-Samsung"].Precio> televisores["Televisor-TLC"].Precio  || televisores["Televisor-Samsung"].Precio> televisores["Televisor-Asus"].Precio  || televisores["Televisor-Samsung"].Precio> televisores["Televisor-Hitachi"].Precio || televisores["Televisor-Samsung"].Precio> televisores["Televisor-Motorola"].Precio   || televisores["Televisor-Samsung"].Precio> televisores["Televisor-LG"].Precio || televisores["Televisor-Samsung"].Precio> televisores["Televisor-Noblex"].Precio ){
-
-        precios.push(televisores["Televisor-Samsung"])
-        console.log(precios)
-
-    }
     
-     else if( televisores["Televisor-TopHouse"].Precio> televisores["Televisor-Sony"].Precio  || televisores["Televisor-TopHouse"].Precio> televisores["Televisor-TLC"].Precio  || televisores["Televisor-TopHouse"].Precio> televisores["Televisor-Asus"].Precio  || televisores["Televisor-TopHouse"].Precio> televisores["Televisor-Hitachi"].Precio || televisores["Televisor-TopHouse"].Precio> televisores["Televisor-Motorola"].Precio   || televisores["Televisor-TopHouse"].Precio> televisores["Televisor-LG"].Precio || televisores["Televisor-TopHouse"].Precio> televisores["Televisor-Noblex"].Precio ){
-        precios.push(televisores["Televisor-TopHouse"])
-    
-    console.log(precios)
  
 };
 
-}
+const arraynuevo = Ordenanos(televisor2);
+console.log(arraynuevo)
 
 
 
-}
+
+
+
