@@ -86,7 +86,7 @@ console.log(televisores[1])
 console.log(televisores["Televisor-TopHouse"].Precio)
 console.log(televisores["Televisor-Sony"].Precio)
 
-var i;
+var i, nombreTv;
 
 console.log(televisores.length)
 
@@ -95,7 +95,7 @@ function VerTelevisores(){
 
     for(i = 0; i<=9;i++){
     
-    let nombreTv = televisores[i];
+     nombreTv = televisores[i];
     console.log(nombreTv)
     document.write(`
         <div>
@@ -104,13 +104,20 @@ function VerTelevisores(){
             <p>${televisores[nombreTv].Stock}</p>
             <p>${televisores[nombreTv].Precio}</p>
             <p>${televisores[nombreTv].Descripcion}</p>
-   
-        `)
+            <button onclick="Ordenanos()" >Ordenanos</button>;
+            `
+            )
 
 
 }
 
-document.write(` </div>
-<div>
-<button> Ordenar</button></div>`)
 }
+
+var arraynuevo = [];
+function Ordenanos(){
+
+
+    
+};
+
+
