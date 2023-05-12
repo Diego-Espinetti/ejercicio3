@@ -20,8 +20,6 @@ var televisor2 = [
     {nombre: "televisor samsung3", Precio:2},
 ]
 
-var arraynuevo;
-
 
 televisores[0] = "Televisor-Samsung";
 televisores["Televisor-Samsung"] = {"Codigo": 1,
@@ -132,6 +130,7 @@ function VerTelevisores(){
     }
    /*  console.log(precios) */
     document.write(` <button onclick="Ordenanos(televisores)" >Ordenanos</button>`)
+    document.write(` <button onclick="Imprimime()" >imprimir</button>`)
 }
 
 function Ordenanos(arrays){
@@ -145,37 +144,44 @@ function Ordenanos(arrays){
             } 
         }
     }
-    console.log( arrays)   
+    console.log(arrays)   
 
+    
+
+
+
+
+
+    
+    
+};
+
+const arraynuevo = Ordenanos(televisores);
+console.log(arraynuevo)
+
+ function Imprimime(){
 
     for(i = 0; i<9;i++){
     
-        nombreTv = televisores[i];
-       console.log(nombreTv)
-       document.write(`<div>`);
-        document.write(` <h2>${televisores[i]}</h2>`);
-        document.write(` <p>${televisores[nombreTv].Codigo}</p>`);
-        document.write(`<p>${televisores[nombreTv].Stock}</p>`);
-        document.write(`<img src="${televisores[nombreTv].Img}"></img>`);
-        document.write(`<p>${televisores[nombreTv].Precio}</p>`);
-        document.write(`<p>${televisores[nombreTv].Descripcion}</p>`);
-        document.write(`</div>`);
-    }
-
-    document.write(` <button onclick="Ordenanos(televisores)" >Ordenanos</button>`)
-};
-
-
+        nombreTvs = arraynuevo[i];
+       console.log(nombreTvs)
+   
+           document.write(`<div>`);
+           document.write(` <h2>${arraynuevo[i]}</h2>`);
+           document.write(` <p>${arraynuevo[nombreTvs].Codigo}</p>`);
+           document.write(`<p>${arraynuevo[nombreTvs].Stock}</p>`);
+           document.write(`<img src="${arraynuevo[nombreTvs].Img}"></img>`);
+           document.write(`<p>${arraynuevo[nombreTvs].Precio}</p>`);
+           document.write(`<p>${arraynuevo[nombreTvs].Descripcion}</p>`);
+           document.write(`</div>`);
+   
+       }
+     
 
 
 
-    
-    
 
-
-arraynuevo = Ordenanos(televisores);
-console.log(arraynuevo)
-
+ }
 
 
 
