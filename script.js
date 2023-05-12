@@ -86,38 +86,46 @@ console.log(televisores[1])
 console.log(televisores["Televisor-TopHouse"].Precio)
 console.log(televisores["Televisor-Sony"].Precio)
 
-var i, nombreTv;
+var i, nombreTv, contenedor;
+
+contenedor = document.getElementById("contenedor");
+
 
 console.log(televisores.length)
 
 function VerTelevisores(){
 
 
-    for(i = 0; i<=9;i++){
+    for(i = 0; i<9;i++){
     
      nombreTv = televisores[i];
     console.log(nombreTv)
-    document.write(`
+/*     document.write(`
         <div>
             <h2>${televisores[i]}</h2>
             <p>${televisores[nombreTv].Codigo}</p>
             <p>${televisores[nombreTv].Stock}</p>
             <p>${televisores[nombreTv].Precio}</p>
             <p>${televisores[nombreTv].Descripcion}</p>
-            <button onclick="Ordenanos()" >Ordenanos</button>;
-            `
-            )
-
+           ;
+            `) */
+        document.write(`<div>`);
+        document.write(` <h2>${televisores[i]}</h2>`);
+        document.write(` <p>${televisores[nombreTv].Codigo}</p>`);
+        document.write(`<p>${televisores[nombreTv].Stock}</p>`);
+        document.write(`<p>${televisores[nombreTv].Precio}</p>`);
+        document.write(`<p>${televisores[nombreTv].Descripcion}</p>`);
+        document.write(`</div>`);
 
 }
-
+document.write(` <button onclick="Ordenanos()" >Ordenanos</button>`)
 }
 
 var arraynuevo = [];
 function Ordenanos(){
 
 
-    
+
 };
 
 
